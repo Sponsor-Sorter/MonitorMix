@@ -1,10 +1,10 @@
-# SoundSpan 0.6.2 release notes
+# SoundSpan 0.6.3 release notes
 
 - Remove app works while automatic routing is enabled. Removed apps stay excluded until Add app is used again.
 - Route removal handles apps with multiple helper processes and waits safely for closed apps to play again before releasing Windows preferences.
 
-- Capture source loads at 100%, unmuted and is kept there during copied playback.
-- Check sound shows its managed status without a source volume slider or mute control. Speaker settings remain adjustable.
+- Reverted forced capture-source volume: source volume and mute remain under your control.
+- Check sound restores the source volume slider and mute control. Below 50%, a warning appears once per app launch and stays dismissed until restart.
 
 - Default-on automatic updates every three days, with an Updates checkbox and manual check.
 - Verified downloads, preserved settings and rollback on installation failure.
@@ -28,9 +28,9 @@
 - Mouse Back follows the window receiving the mouse message instead of relying on foreground activation timing.
 - Release verification now includes a quiet non-silent signal check through source capture, app render sessions and Windows output loopback, in addition to timing tests.
 
-Extract the entire ZIP and run SoundSpan.exe. Existing settings are retained. Click Start audio; if sound is missing or quiet, click Check sound. Use Open Windows mixer to inspect the source and speaker levels, or Stereo repair & restart to repair routing. Adjust speaker Windows volume and mute controls in Check sound. The capture source is read-only. The app manages capture-source volume at 100%; speaker volume remains under your control.
+Extract the entire ZIP and run SoundSpan.exe. Existing settings are retained. Click Start audio; if sound is missing or quiet, click Check sound. Use Open Windows mixer to inspect the source and speaker levels, or Stereo repair & restart to repair routing. Adjust speaker Windows volume and mute controls in Check sound. Source volume and mute controls are also adjustable; SoundSpan does not automatically raise volume or unmute devices.
 
-Windows has separate capture-source, playback-device and per-app mixer volumes. SoundSpan keeps the capture source at 100% to avoid attenuating every copied output. Players pinned to a specific output may need their output changed to Default and playback restarted.
+Windows has separate capture-source, playback-device and per-app mixer volumes. Low source volume reduces every copied output; a warning below 50% is shown once per app launch. Players pinned to a specific output may need their output changed to Default and playback restarted.
 
 Known limits: the tested Acer pair uses a 95 ms software buffer plus device processing and saved delays. Windows stream/loopback measurements do not prove physical audibility, acoustic synchronization or performance on every device. The executable is unsigned. Bluetooth/Wi-Fi Windows endpoints may add transport delay; direct DLNA/AirPlay/Chromecast/Sonos casting is not implemented. See COMPATIBILITY.md.
 

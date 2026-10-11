@@ -1,8 +1,8 @@
-# SoundSpan 0.6.2
+# SoundSpan 0.6.3
 
 One PC. Every speaker. Portable Windows x64 release candidate.
 
-Extract the entire ZIP and run SoundSpan.exe. Select your speakers, choose a listening preset, then click Fast setup & play. If sound is missing or quiet, click Check sound. It shows Windows levels separately from app gain and offers Stereo repair & restart without changing your measured delays. The capture source is managed automatically at 100% and unmuted. Adjust listening volume with the speaker controls.
+Extract the entire ZIP and run SoundSpan.exe. Select your speakers, choose a listening preset, then click Fast setup & play. If sound is missing or quiet, click Check sound. It shows Windows levels separately from app gain and offers Stereo repair & restart without changing your measured delays. Source volume and mute remain adjustable. Below 50%, a warning appears once per app launch; dismissing it keeps your chosen volume.
 
 Studio is the simple listening dashboard. Speakers opens the detailed routing and speaker settings; the active tab is highlighted. Fast setup & play chooses an unused source, enables Windows routing, configures the selected speakers and starts audio. It preserves volume, positions and measured delays.
 
