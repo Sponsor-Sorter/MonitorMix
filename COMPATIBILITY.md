@@ -1,6 +1,6 @@
 # Audio device compatibility
 
-MonitorMix enumerates active Windows playback endpoints through WASAPI. There is no monitor-brand allowlist. An installed driver must expose the output in Windows Sound settings and allow shared-mode PCM playback.
+SoundSpan enumerates active Windows playback endpoints through WASAPI. There is no monitor-brand allowlist. An installed driver must expose the output in Windows Sound settings and allow shared-mode PCM playback.
 
 | Output type | Support scope | Verification |
 |---|---|---|
@@ -27,6 +27,6 @@ References: [Microsoft WASAPI](https://learn.microsoft.com/en-us/windows/win32/c
 
 Optical fibre/TOSLINK/S/PDIF outputs are supported when their driver exposes a Windows shared-mode PCM playback endpoint. The tested Realtek Digital source is such an endpoint; an optical receiver or cable was not physically listening-tested. Encoded Dolby/DTS passthrough is outside this PCM engine.
 
-Bluetooth and Wi-Fi/wireless playback endpoints can be selected when they appear in Windows Sound settings. Their own transport/codec buffers may add substantial delay, and cannot be removed by MonitorMix's software clock correction. No Bluetooth or Wi-Fi audio endpoint was available for physical verification in this build.
+Bluetooth and Wi-Fi/wireless playback endpoints can be selected when they appear in Windows Sound settings. Their own transport/codec buffers may add substantial delay, and cannot be removed by SoundSpan's software clock correction. No Bluetooth or Wi-Fi audio endpoint was available for physical verification in this build.
 
-Direct DLNA, AirPlay, Chromecast and Sonos network casting is not implemented in 0.4.4. Network discovery does not make a device a usable Windows playback endpoint. A separate streaming backend and per-device acceptance are required.
+Direct DLNA, AirPlay, Chromecast and Sonos network casting is not implemented in 0.5.0. Network discovery does not make a device a usable Windows playback endpoint. A separate streaming backend and per-device acceptance are required.

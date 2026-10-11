@@ -1,5 +1,6 @@
-# MonitorMix 0.4.4 release notes
+# SoundSpan 0.5.0 release notes
 
+- Renamed to SoundSpan across the window, tray, executable and download package. Existing settings and speaker calibration are retained.
 - Explicit mono-output support: stereo is averaged into the device's single channel with bounded gain.
 - Mono loopback sources retain their channel count, including the silent keep-alive stream.
 - Fast setup recognizes digital outputs from any manufacturer and falls back to another available Windows playback device.
@@ -7,7 +8,7 @@
 - Sources with more than eight channels are rejected clearly instead of silently truncating their layout.
 - All 0.4.3 reliability fixes, protected bass boost, presets, tray mode and screen shortcuts remain.
 
-Extract the whole ZIP and run MonitorMix.exe. Existing speaker calibration and settings are preserved. Read COMPATIBILITY.md for device support and limitations.
+Extract the whole ZIP and run SoundSpan.exe. Existing speaker calibration and settings are preserved. Read COMPATIBILITY.md for device support and limitations.
 
 Known limits: Windows shared-mode PCM playback is supported; ASIO-only outputs and exclusive-mode-only devices are not. Bluetooth/wireless devices add transport delay and may change playback profiles when a microphone is enabled. This is not a guarantee for every model. The tested Acer pair uses a 95 ms software timing buffer plus device processing and configured delays. The executable is unsigned. Physical testing of USB/Bluetooth/mono hardware and additional PCs remains outstanding.
 
