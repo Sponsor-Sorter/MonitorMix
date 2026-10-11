@@ -29,4 +29,10 @@ Optical fibre/TOSLINK/S/PDIF outputs are supported when their driver exposes a W
 
 Bluetooth and Wi-Fi/wireless playback endpoints can be selected when they appear in Windows Sound settings. Their own transport/codec buffers may add substantial delay, and cannot be removed by SoundSpan's software clock correction. No Bluetooth or Wi-Fi audio endpoint was available for physical verification in this build.
 
-Direct DLNA, AirPlay, Chromecast and Sonos network casting is not implemented in 0.5.0. Network discovery does not make a device a usable Windows playback endpoint. A separate streaming backend and per-device acceptance are required.
+Direct DLNA, AirPlay, Chromecast and Sonos network casting is not implemented in 0.6.1. Network discovery does not make a device a usable Windows playback endpoint. A separate streaming backend and per-device acceptance are required.
+
+## Application routing
+
+App routing uses Windows per-application output preferences and any active Windows playback endpoint. Native preference changes, monitor following and persistence were tested with a disposable silent app on Windows 10 build 19045. This does not prove live stream migration in every browser/game/player. Exclusive/ASIO or app-selected outputs may ignore Windows preferences; browser tabs generally share one destination. No SoundSpan copy buffer is added to direct app routes. Automatic following needs SoundSpan running and speakers mapped to the relevant screens.
+
+

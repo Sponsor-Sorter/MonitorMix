@@ -1,14 +1,28 @@
-# SoundSpan 0.5.0
+# SoundSpan 0.6.1
 
 One PC. Every speaker. Portable Windows x64 release candidate.
 
-[Download SoundSpan for Windows x64](https://github.com/Sponsor-Sorter/SoundSpan/releases/latest).
+Extract the entire ZIP and run SoundSpan.exe. Select your speakers, choose a listening preset, then click Fast setup & play. If sound is missing or quiet, click Check sound. It shows Windows levels separately from app gain and offers Stereo repair & restart without changing your measured delays. Windows volume is never automatically increased.
 
-Extract the entire ZIP and run SoundSpan.exe. Select your speakers, choose a listening preset, then click Fast setup or Start audio. Advanced settings contains source selection, channel placement, timing, microphone calibration and optional paused Windows startup. Click a screen preview to open its assigned speaker settings. Mouse Back returns to simple speaker view. Keep in tray continues audio and pauses visualization; Exit restores Windows output choices and closes the app.
+Studio is the simple listening dashboard. Speakers opens the detailed routing and speaker settings; the active tab is highlighted. Fast setup & play chooses an unused source, enables Windows routing, configures the selected speakers and starts audio. It preserves volume, positions and measured delays.
+
+Advanced settings contains source selection, channel placement, timing, microphone calibration and optional paused Windows startup. Click a screen preview to open its assigned speaker settings. Mouse Back returns to simple speaker view. Keep in tray continues audio and pauses visualization; Exit restores Windows output choices and closes the app.
 
 Classic waveform shows the blue full mix, gold bass, purple mids and mint treble. These readings do not change sound. Bass boost uses digital headroom protection; a physical speaker can still distort when driven too loudly.
 
 Settings, logs and recovery information are in %LOCALAPPDATA%\MonitorSound. Updates retain your source, speaker selections, positions, volume and calibration. Music, Gaming and Movies presets preserve those installation settings.
+
+## App routing
+
+Open App routing and click a screen in the monitor map. Choose its speaker, choose an open app, then Add app. Repeat for each screen. Assignments are saved and reapplied when apps reopen. Remove app restores the previous Windows preference; reopen a closed app before removing its Windows preference.
+
+With Automatically route open apps to the screen they’re on checked, SoundSpan discovers open apps itself and follows their windows between mapped screens. Separate app assignments or approvals are not required. Uncheck it to use saved manual assignments; moving a window then leaves its output unchanged. Leave SoundSpan running in the tray for automatic following. Match each screen to a speaker once, particularly when identical monitor names make automatic matching ambiguous.
+
+Windows routes an application as a whole. Browser tabs and multiple windows of the same browser generally share one audio destination. Following prefers an app’s foreground window and otherwise uses its topmost visible window. Minimized windows retain their last assignment. Protected apps, apps using exclusive/ASIO output, apps that select their own device and some Store applications may not accept a Windows preference. If an app has not opened an audio session yet, its assignment waits until it does.
+
+These are direct Windows output preferences and add no SoundSpan copy buffer. Direct routes bypass SoundSpan bass processing and the shared-source visualizer. Each destination retains its own Windows volume. Windows and the player determine whether a running stream changes immediately or briefly stops; some players require playback or the app to restart. Zero interruption is not guaranteed. The per-app policy adapter was verified on Windows 10 build 19045; other Windows builds and real player switching require further acceptance testing. Store app version/path changes may require reassignment.
+
+Double-click the visualizer to fill the app window. Double-click again or press Escape to restore the frame. Studio’s enlarged screen preview retains the real display proportions and placement.
 
 ## Timing limits
 
@@ -25,6 +39,10 @@ This candidate ships its .NET 10 runtime, requires no administrator privileges a
 ## Audio outputs
 Supports active Windows shared-mode PCM playback devices across manufacturers: monitor/TV speakers, analog speakers/headphones, USB outputs, headsets and virtual devices. Mono outputs are handled explicitly. See [COMPATIBILITY.md](COMPATIBILITY.md) for verified devices, Bluetooth delay, source requirements, multichannel and ASIO limitations.
 
-## Source and support
 
-This public repository contains downloads and documentation only. Application source is private. Report problems through the repository Issues page.
+
+
+
+Updates: automatic GitHub updates are on by default and check every three days. Open Updates from Speakers or the tray menu to turn them off or check now. Downloads are checksum-verified; installation briefly restarts the app, preserves settings and rolls back a failed install. A writable app folder is required.
+
+Screen dropdowns show the current screen resolution, with existing assignments preserved. Studio monitor previews retain their proportions in a smaller frame.
