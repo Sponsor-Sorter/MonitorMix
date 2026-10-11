@@ -1,4 +1,4 @@
-# SoundSpan 0.6.3
+# SoundSpan 0.6.4
 
 One PC. Every speaker. Portable Windows x64 release candidate.
 

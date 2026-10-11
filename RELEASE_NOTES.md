@@ -1,4 +1,6 @@
-# SoundSpan 0.6.3 release notes
+# SoundSpan 0.6.4 release notes
+
+- Branded low-source-volume reminder with the SoundSpan logo, blue styling and a clear Got it button.
 
 - Remove app works while automatic routing is enabled. Removed apps stay excluded until Add app is used again.
 - Route removal handles apps with multiple helper processes and waits safely for closed apps to play again before releasing Windows preferences.
