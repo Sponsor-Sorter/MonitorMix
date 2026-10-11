@@ -1,8 +1,8 @@
-# SoundSpan 0.6.1
+# SoundSpan 0.6.2
 
 One PC. Every speaker. Portable Windows x64 release candidate.
 
-Extract the entire ZIP and run SoundSpan.exe. Select your speakers, choose a listening preset, then click Fast setup & play. If sound is missing or quiet, click Check sound. It shows Windows levels separately from app gain and offers Stereo repair & restart without changing your measured delays. Windows volume is never automatically increased.
+Extract the entire ZIP and run SoundSpan.exe. Select your speakers, choose a listening preset, then click Fast setup & play. If sound is missing or quiet, click Check sound. It shows Windows levels separately from app gain and offers Stereo repair & restart without changing your measured delays. The capture source is managed automatically at 100% and unmuted. Adjust listening volume with the speaker controls.
 
 Studio is the simple listening dashboard. Speakers opens the detailed routing and speaker settings; the active tab is highlighted. Fast setup & play chooses an unused source, enables Windows routing, configures the selected speakers and starts audio. It preserves volume, positions and measured delays.
 
@@ -46,3 +46,7 @@ Supports active Windows shared-mode PCM playback devices across manufacturers: m
 Updates: automatic GitHub updates are on by default and check every three days. Open Updates from Speakers or the tray menu to turn them off or check now. Downloads are checksum-verified; installation briefly restarts the app, preserves settings and rolls back a failed install. A writable app folder is required.
 
 Screen dropdowns show the current screen resolution, with existing assignments preserved. Studio monitor previews retain their proportions in a smaller frame.
+
+
+
+Remove app releases its saved Windows destination and excludes it from automatic following. Add app includes it again. If the app is closed or has no audio session, release completes when it next plays audio.
