@@ -1,4 +1,26 @@
-# SoundSpan 0.6.4 release notes
+# SoundSpan 0.6.7 release notes
+
+- Windows/keyboard master volume targets the shared source in All apps mode. SoundSpan repairs changed Windows default output roles without changing source volume.
+- Fixed the source speaker-card slider: it now controls actual Windows source volume rather than an unused copy gain. Inapp copy delay/channel controls are disabled for the source.
+- SoundSpan’s source-side Windows mixer volume and mute now control the audible copied output sessions, fixing a mixer slider that previously affected only a silent session.
+- Old SoundSpan-specific Windows output preferences are cleared before reading system defaults, fixing masked default-output recovery and restoration.
+- Add Bluetooth device opens a branded speaker/headset picker, requests Windows pairing, enables its audio service and adds the selected ready output to playback. Already paired devices can be selected. Windows Bluetooth settings is available for LE-only devices or Windows-managed setup.
+- Stereo profiles are preferred; physical device identity is matched using container IDs, with a friendly-name fallback. Ambiguous outputs are not chosen automatically.
+- Outputs can join, disconnect and rejoin the live timeline without restarting other speakers. Source-device disconnection still pauses copying until the source returns.
+- Bluetooth pairing and profile switching were not physically tested: this test PC exposes no Bluetooth adapter. No instant pairing, universal device support, acoustic synchronization or zero latency guarantee. Bluetooth transport and decoder delays vary by device.
+
+## Earlier changes
+## SoundSpan 0.6.5
+
+- New All apps → all selected speakers checkbox on Studio and App routing. While audio runs, existing and newly detected Windows audio apps are routed through the shared source, overriding per-screen assignments without deleting them. Turning it off restores per-screen routing.
+- App preferences are checked again after player resets and mixer changes; helper processes without a routable audio identity no longer block other processes.
+- Connecting or disconnecting unrelated audio devices no longer stops playback.
+- Saved speakers and the source stay selected through disconnection. Playback waits for selected devices to reconnect and resumes; sleep/wake retains playback intent.
+- Volumes, delays and the once-per-launch branded low-volume reminder are preserved.
+- Some players with fixed output devices, exclusive audio or cached streams still need their playback restarted. Browser tabs usually share a browser output. Physical device reconnection and sleep/wake need user testing.
+
+## Earlier changes
+## SoundSpan 0.6.4
 
 - Branded low-source-volume reminder with the SoundSpan logo, blue styling and a clear Got it button.
 
@@ -35,6 +57,3 @@ Extract the entire ZIP and run SoundSpan.exe. Existing settings are retained. Cl
 Windows has separate capture-source, playback-device and per-app mixer volumes. Low source volume reduces every copied output; a warning below 50% is shown once per app launch. Players pinned to a specific output may need their output changed to Default and playback restarted.
 
 Known limits: the tested Acer pair uses a 95 ms software buffer plus device processing and saved delays. Windows stream/loopback measurements do not prove physical audibility, acoustic synchronization or performance on every device. The executable is unsigned. Bluetooth/Wi-Fi Windows endpoints may add transport delay; direct DLNA/AirPlay/Chromecast/Sonos casting is not implemented. See COMPATIBILITY.md.
-
-
-

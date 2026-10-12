@@ -1,4 +1,6 @@
-# SoundSpan 0.6.4
+# SoundSpan 0.6.7
+
+Enable **All apps → all selected speakers** on Studio to share existing and newly opened apps across your selected outputs. While enabled and playing, saved per-screen assignments are paused. Turn it off to restore screen routing. Some players require playback restarted after switching output.
 
 One PC. Every speaker. Portable Windows x64 release candidate.
 
