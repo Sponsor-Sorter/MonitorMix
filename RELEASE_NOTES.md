@@ -1,3 +1,14 @@
+# SoundSpan 0.6.8 release notes
+
+- Connected Bluetooth devices now appear beneath the monitors in Studio and App routing, using matching blue icons for device-reported speakers, headsets, phones, tablets and computers.
+- Click an audio-capable Bluetooth device to open its speaker settings. Devices without an available Windows audio output show an explanation.
+- Unknown device types use a Bluetooth icon rather than guessing. Ready Bluetooth LE audio outputs can appear through their Windows device identity.
+- Disconnected devices are removed automatically. Background connection checks do not start discovery inquiries and pause while hidden or minimized.
+- Small Studio windows scroll to keep settings accessible; additional device tiles scroll horizontally. Monitor proportions, saved speaker choices, volume and calibration remain intact.
+
+Physical Bluetooth pairing and device-type reporting remain unverified on this PC because no Bluetooth adapter is detected. Connected-only non-audio LE devices are not guaranteed to appear. A connected phone or tablet is not automatically an audio output.
+
+## Previous release
 # SoundSpan 0.6.7 release notes
 
 - Windows/keyboard master volume targets the shared source in All apps mode. SoundSpan repairs changed Windows default output roles without changing source volume.

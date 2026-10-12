@@ -1,8 +1,8 @@
-# SoundSpan 0.6.7
+# SoundSpan 0.6.8
 
 Enable **All apps → all selected speakers** on Studio to share existing and newly opened apps across your selected outputs. While enabled and playing, saved per-screen assignments are paused. Turn it off to restore screen routing. Some players require playback restarted after switching output.
 
-One PC. Every speaker. Portable Windows x64 release candidate.
+One PC. Every speaker. Portable Windows x64 app.
 
 Extract the entire ZIP and run SoundSpan.exe. Select your speakers, choose a listening preset, then click Fast setup & play. If sound is missing or quiet, click Check sound. It shows Windows levels separately from app gain and offers Stereo repair & restart without changing your measured delays. Source volume and mute remain adjustable. Below 50%, a warning appears once per app launch; dismissing it keeps your chosen volume.
 
@@ -13,6 +13,12 @@ Advanced settings contains source selection, channel placement, timing, micropho
 Classic waveform shows the blue full mix, gold bass, purple mids and mint treble. These readings do not change sound. Bass boost uses digital headroom protection; a physical speaker can still distort when driven too loudly.
 
 Settings, logs and recovery information are in %LOCALAPPDATA%\MonitorSound. Updates retain your source, speaker selections, positions, volume and calibration. Music, Gaming and Movies presets preserve those installation settings.
+
+## Bluetooth device preview
+
+Connected Bluetooth devices appear beneath the monitors in Studio and App routing, with matching blue icons. SoundSpan uses the device-reported type for speakers, headsets, phones, tablets and computers. Unknown types use a Bluetooth icon. Click a device with an available audio output to open its speaker settings. Phones and tablets do not automatically become speakers; SoundSpan explains when Windows exposes no audio output.
+
+Disconnected devices leave the preview automatically. Connection checks run in the background without discovery inquiries and pause while the app is hidden or minimized. Extra devices scroll horizontally; small Studio windows scroll vertically to keep the controls accessible. Monitor proportions are preserved.
 
 ## App routing
 
