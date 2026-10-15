@@ -1,4 +1,4 @@
-# SoundSpan 0.6.8
+# SoundSpan 0.6.11
 
 Enable **All apps → all selected speakers** on Studio to share existing and newly opened apps across your selected outputs. While enabled and playing, saved per-screen assignments are paused. Turn it off to restore screen routing. Some players require playback restarted after switching output.
 
@@ -28,7 +28,7 @@ With Automatically route open apps to the screen they’re on checked, SoundSpan
 
 Windows routes an application as a whole. Browser tabs and multiple windows of the same browser generally share one audio destination. Following prefers an app’s foreground window and otherwise uses its topmost visible window. Minimized windows retain their last assignment. Protected apps, apps using exclusive/ASIO output, apps that select their own device and some Store applications may not accept a Windows preference. If an app has not opened an audio session yet, its assignment waits until it does.
 
-These are direct Windows output preferences and add no SoundSpan copy buffer. Direct routes bypass SoundSpan bass processing and the shared-source visualizer. Each destination retains its own Windows volume. Windows and the player determine whether a running stream changes immediately or briefly stops; some players require playback or the app to restart. Zero interruption is not guaranteed. The per-app policy adapter was verified on Windows 10 build 19045; other Windows builds and real player switching require further acceptance testing. Store app version/path changes may require reassignment.
+These are direct Windows output preferences and add no SoundSpan copy buffer. Direct routes bypass SoundSpan bass processing, shared-playback speaker gain and the shared-source visualizer. Use Windows app volume controls for those direct routes. Each destination retains its own Windows volume. Windows and the player determine whether a running stream changes immediately or briefly stops; some players require playback or the app to restart. Zero interruption is not guaranteed. The per-app policy adapter was verified on Windows 10 build 19045; other Windows builds and real player switching require further acceptance testing. Store app version/path changes may require reassignment.
 
 Double-click the visualizer to fill the app window. Double-click again or press Escape to restore the frame. Studio’s enlarged screen preview retains the real display proportions and placement.
 
@@ -42,7 +42,7 @@ The source must be separate from copied outputs to avoid feedback and direct uns
 
 Audio uses shared WASAPI playback timing and automatic clock correction. Device loss or sleep pauses playback safely; reopen and start again after checking outputs. Windows defaults are restored on normal stop/exit and recovered after an abnormal exit on the next launch. This uses a Windows PolicyConfig adapter, which must be validated on each supported Windows version.
 
-This candidate ships its .NET 10 runtime, requires no administrator privileges and installs no driver. Signal/UI, silent hardware routing, restart and Windows-default restoration reports are bundled in Verification. Archive contents are checked against manifest.json. The executable is not Authenticode signed. Physical unplug/sleep, other PCs/DPI configurations, microphone calibration and game/movie acoustic latency still require manual acceptance before a broad production release. Automated tests cannot guarantee there are no bugs.
+This release ships its .NET 10 runtime, requires no administrator privileges and installs no driver. Version 0.6.11 was verified with offline volume, updater and timing regressions plus package integrity checks. Verification contains current offline reports only; live audio, native routing, acoustic synchronization and physical Bluetooth/Wi-Fi were not retested for this release. Archive contents are checked against manifest.json. The executable is not Authenticode signed. Physical unplug/sleep, other PCs/DPI configurations, microphone calibration and game/movie acoustic latency still require manual acceptance before a broad production release. Automated tests cannot guarantee there are no bugs.
 
 ## Audio outputs
 Supports active Windows shared-mode PCM playback devices across manufacturers: monitor/TV speakers, analog speakers/headphones, USB outputs, headsets and virtual devices. Mono outputs are handled explicitly. See [COMPATIBILITY.md](COMPATIBILITY.md) for verified devices, Bluetooth delay, source requirements, multichannel and ASIO limitations.

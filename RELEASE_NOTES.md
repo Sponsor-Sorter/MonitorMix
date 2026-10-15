@@ -1,3 +1,17 @@
+# SoundSpan 0.6.11 release notes
+
+- Improved Windows volume-session recovery when source or speaker sessions appear late, expire or disconnect. One unavailable output no longer prevents other outputs receiving volume and mute changes.
+- Moved volume reconciliation out of Windows notification callbacks to avoid a potential lock/cleanup stall. Delayed notifications use current volume values instead of replaying stale ones.
+- Fixed updater checks getting stuck after settings-save failures, and preserved retry scheduling when a completed check cannot be saved.
+- Improved updater cancellation and shutdown handling, including pending HTTP requests.
+- Prevented concurrent speaker timing updates from losing a larger buffer requirement. Automatic gap recovery now respects its 120 ms cap while preserving larger device requirements.
+- Diagnostic reports now identify the actual running version. Shared-playback volume tooltips clarify that directly routed apps use their Windows app volume controls.
+
+Verification: 17 offline volume/updater/timing checks pass in the portable build; Store policy and build checks also pass. The final ZIP is checked through the real updater extraction and manifest verifier without installing it. These checks do not open audio devices or validate audible sound.
+
+Live audio, acoustic synchronization, physical Bluetooth/Wi-Fi hardware, other-PC compatibility and actual Store entitlement/certification were not retested for this release. No zero-latency or bug-free guarantee. Direct per-app routes retain Windows app volume controls. The Store edition remains a separate private candidate.
+
+## Previous release
 # SoundSpan 0.6.8 release notes
 
 - Connected Bluetooth devices now appear beneath the monitors in Studio and App routing, using matching blue icons for device-reported speakers, headsets, phones, tablets and computers.
