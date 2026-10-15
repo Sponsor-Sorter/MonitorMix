@@ -11,6 +11,9 @@ Verification: 17 offline volume/updater/timing checks pass in the portable build
 
 Live audio, acoustic synchronization, physical Bluetooth/Wi-Fi hardware, other-PC compatibility and actual Store entitlement/certification were not retested for this release. No zero-latency or bug-free guarantee. Direct per-app routes retain Windows app volume controls. The Store edition remains a separate private candidate.
 
+
+Offline endurance result: the production mixer-recovery code completed 68.1 minutes against simulated endpoints with 13039 recovery checkpoints, 2620839 notifications and 13039 simulated disconnects, with no test failure. Zero audio devices were opened; this does not validate native/audio hardware behavior. The attached offline-endurance JSON contains the final result.
+
 ## Previous release
 # SoundSpan 0.6.8 release notes
 
@@ -21,6 +24,9 @@ Live audio, acoustic synchronization, physical Bluetooth/Wi-Fi hardware, other-P
 - Small Studio windows scroll to keep settings accessible; additional device tiles scroll horizontally. Monitor proportions, saved speaker choices, volume and calibration remain intact.
 
 Physical Bluetooth pairing and device-type reporting remain unverified on this PC because no Bluetooth adapter is detected. Connected-only non-audio LE devices are not guaranteed to appear. A connected phone or tablet is not automatically an audio output.
+
+
+Offline endurance result: the production mixer-recovery code completed 68.1 minutes against simulated endpoints with 13039 recovery checkpoints, 2620839 notifications and 13039 simulated disconnects, with no test failure. Zero audio devices were opened; this does not validate native/audio hardware behavior. The attached offline-endurance JSON contains the final result.
 
 ## Previous release
 # SoundSpan 0.6.7 release notes
