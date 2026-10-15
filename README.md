@@ -1,4 +1,4 @@
-# SoundSpan 0.6.11
+# SoundSpan 0.6.12
 
 Enable **All apps → all selected speakers** on Studio to share existing and newly opened apps across your selected outputs. While enabled and playing, saved per-screen assignments are paused. Turn it off to restore screen routing. Some players require playback restarted after switching output.
 
@@ -42,7 +42,7 @@ The source must be separate from copied outputs to avoid feedback and direct uns
 
 Audio uses shared WASAPI playback timing and automatic clock correction. Device loss or sleep pauses playback safely; reopen and start again after checking outputs. Windows defaults are restored on normal stop/exit and recovered after an abnormal exit on the next launch. This uses a Windows PolicyConfig adapter, which must be validated on each supported Windows version.
 
-This release ships its .NET 10 runtime, requires no administrator privileges and installs no driver. Version 0.6.11 was verified with offline volume, updater and timing regressions plus package integrity checks. Verification contains current offline reports only; live audio, native routing, acoustic synchronization and physical Bluetooth/Wi-Fi were not retested for this release. Archive contents are checked against manifest.json. The executable is not Authenticode signed. Physical unplug/sleep, other PCs/DPI configurations, microphone calibration and game/movie acoustic latency still require manual acceptance before a broad production release. Automated tests cannot guarantee there are no bugs.
+This release ships its .NET 10 runtime, requires no administrator privileges and installs no driver. Version 0.6.12 was verified with 29 offline volume, updater, timing and channel regressions plus package integrity checks. Verification contains current offline reports only; live audio, native routing, acoustic synchronization and physical Bluetooth/Wi-Fi were not retested for this release. Archive contents are checked against manifest.json. The executable is not Authenticode signed. Physical unplug/sleep, other PCs/DPI configurations, microphone calibration and game/movie acoustic latency still require manual acceptance before a broad production release. Automated tests cannot guarantee there are no bugs.
 
 ## Audio outputs
 Supports active Windows shared-mode PCM playback devices across manufacturers: monitor/TV speakers, analog speakers/headphones, USB outputs, headsets and virtual devices. Mono outputs are handled explicitly. See [COMPATIBILITY.md](COMPATIBILITY.md) for verified devices, Bluetooth delay, source requirements, multichannel and ASIO limitations.

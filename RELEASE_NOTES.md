@@ -1,3 +1,14 @@
+# SoundSpan 0.6.12 release notes
+
+- Failed, cancelled and checksum-rejected update downloads now clean up their own temporary files. Files handed to an installer are retained for installation and rollback.
+- Live speaker additions and channel edits now use the same channel-availability checks as startup. Unavailable surround channels are rejected; an unsuccessful edit restores the previous selection instead of leaving an unsupported assignment.
+- Offline updater tests now use isolated diagnostic logging, keeping simulated failures out of the normal app log.
+- The existing layout and controls are preserved.
+
+Verification: 29 offline volume, updater, timing and channel checks pass in the final portable build. The exact ZIP also passes the actual updater extraction/manifest verifier and rejects a wrong checksum without installation. The separate Store candidate passes its offline/policy checks and package validation but has not been uploaded or certified.
+
+Live audio, native hot-add/UI event behavior, acoustic synchronization and physical Bluetooth/Wi-Fi hardware were not retested for this version. Source files and development material are excluded from the download; private source backups are preserved.
+
 # SoundSpan 0.6.11 release notes
 
 - Improved Windows volume-session recovery when source or speaker sessions appear late, expire or disconnect. One unavailable output no longer prevents other outputs receiving volume and mute changes.
