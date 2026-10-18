@@ -1,3 +1,11 @@
+# SoundSpan 0.6.13
+
+Improves recovery of app routing when an assigned speaker or shared source disconnects. SoundSpan releases only the app output preferences it still owns. Restoring a previous output now falls back to Windows default when that device is unavailable, rather than restoring a stale device ID. Saved screen assignments remain available for reconnection, and external routing changes are preserved.
+
+Verified: 36 offline regression cases passed against the exact runtime ZIP, including seven routing recovery cases, plus a complete 281-file SHA-256 manifest and runtime-only archive audit. Source, scripts, symbols, user settings and logs are excluded.
+
+Limits: live audio continuity, native device reconnect, Bluetooth hardware, acoustic synchronization and resolution of the reported media silence have not been confirmed for this update. Some players still need playback restarted after changing outputs. This release does not guarantee zero latency or no bugs.
+
 # SoundSpan 0.6.12 release notes
 
 - Failed, cancelled and checksum-rejected update downloads now clean up their own temporary files. Files handed to an installer are retained for installation and rollback.
@@ -99,3 +107,4 @@ Extract the entire ZIP and run SoundSpan.exe. Existing settings are retained. Cl
 Windows has separate capture-source, playback-device and per-app mixer volumes. Low source volume reduces every copied output; a warning below 50% is shown once per app launch. Players pinned to a specific output may need their output changed to Default and playback restarted.
 
 Known limits: the tested Acer pair uses a 95 ms software buffer plus device processing and saved delays. Windows stream/loopback measurements do not prove physical audibility, acoustic synchronization or performance on every device. The executable is unsigned. Bluetooth/Wi-Fi Windows endpoints may add transport delay; direct DLNA/AirPlay/Chromecast/Sonos casting is not implemented. See COMPATIBILITY.md.
+

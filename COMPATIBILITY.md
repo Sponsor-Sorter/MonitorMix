@@ -1,3 +1,5 @@
+SoundSpan 0.6.13 adds owned-route cleanup when endpoints disappear. It does not force-restart another player's audio stream or infer a new endpoint from an identical monitor name. Native reconnection and audible playback remain unverified for this update.
+
 # Audio device compatibility
 
 SoundSpan enumerates active Windows playback endpoints through WASAPI. There is no monitor-brand allowlist. An installed driver must expose the output in Windows Sound settings and allow shared-mode PCM playback.
@@ -39,3 +41,4 @@ App routing uses Windows per-application output preferences and any active Windo
 Bluetooth setup: native classic Bluetooth pairing and audio-service enablement are implemented. LE-only devices use Windows Bluetooth settings and are added when an identifiable audio output appears. Actual pairing/profile switching requires hardware testing; no Bluetooth adapter was available on the test PC. Output hot-add/remove was verified using connected monitor endpoints. Some applications with fixed or cached audio devices require playback restarted.
 
 Bluetooth preview icons use reported Class of Device information. Unknown or unavailable type metadata uses a generic Bluetooth icon. Classic connected devices and ready Bluetooth LE Windows audio endpoints can appear; non-audio LE devices are not guaranteed to appear. A connected phone/tablet needs a Windows playback endpoint to receive audio. Preview layout and classification fixtures were checked; physical Bluetooth testing remains unavailable on this PC.
+
