@@ -1,10 +1,12 @@
-# SoundSpan 0.6.13
+# SoundSpan 0.6.15
 
 Enable **All apps → all selected speakers** on Studio to share existing and newly opened apps across your selected outputs. While enabled and playing, saved per-screen assignments are paused. Turn it off to restore screen routing. Some players require playback restarted after switching output.
 
 One PC. Every speaker. Portable Windows x64 app.
 
 Extract the entire ZIP and run SoundSpan.exe. Select your speakers, choose a listening preset, then click Fast setup & play. If sound is missing or quiet, click Check sound. It shows Windows levels separately from app gain and offers Stereo repair & restart without changing your measured delays. Source volume and mute remain adjustable. Below 50%, a warning appears once per app launch; dismissing it keeps your chosen volume.
+
+After a Windows or audio-driver upgrade, endpoint IDs can change. Select your current speakers and use Fast setup again; saved physical screen mappings and measured delays are not guessed onto new IDs.
 
 Studio is the simple listening dashboard. Speakers opens the detailed routing and speaker settings; the active tab is highlighted. Fast setup & play chooses an unused source, enables Windows routing, configures the selected speakers and starts audio. It preserves volume, positions and measured delays.
 
@@ -42,7 +44,7 @@ The source must be separate from copied outputs to avoid feedback and direct uns
 
 Audio uses shared WASAPI playback timing and automatic clock correction. Device loss or sleep pauses playback safely; reopen and start again after checking outputs. Windows defaults are restored on normal stop/exit and recovered after an abnormal exit on the next launch. This uses a Windows PolicyConfig adapter, which must be validated on each supported Windows version.
 
-This release ships its .NET 10 runtime, requires no administrator privileges and installs no driver. Version 0.6.13 was verified with 29 offline volume, updater, timing and channel regressions plus package integrity checks. Verification contains current offline reports only; live audio, native routing, acoustic synchronization and physical Bluetooth/Wi-Fi were not retested for this release. Archive contents are checked against manifest.json. The executable is not Authenticode signed. Physical unplug/sleep, other PCs/DPI configurations, microphone calibration and game/movie acoustic latency still require manual acceptance before a broad production release. Automated tests cannot guarantee there are no bugs.
+This release ships its .NET 10 runtime, requires no administrator privileges and installs no driver. Version 0.6.15 passed 45 exact-ZIP offline regressions and two actual updater package-integrity checks. Its Windows 11 candidate also passed 21 native volume/mute, output lifecycle and fixture routing checks; the user confirmed mute, responsiveness and normal playback. Archive contents are checked against MANIFEST.json. The executable is not Authenticode signed. Prolonged gaming, physical unplug/sleep, other PCs/DPI configurations, Bluetooth/Wi-Fi hardware, microphone calibration and acoustic latency still require further acceptance. These checks do not guarantee there are no bugs.
 
 ## Audio outputs
 Supports active Windows shared-mode PCM playback devices across manufacturers: monitor/TV speakers, analog speakers/headphones, USB outputs, headsets and virtual devices. Mono outputs are handled explicitly. See [COMPATIBILITY.md](COMPATIBILITY.md) for verified devices, Bluetooth delay, source requirements, multichannel and ASIO limitations.
@@ -58,4 +60,5 @@ Screen dropdowns show the current screen resolution, with existing assignments p
 
 
 Remove app releases its saved Windows destination and excludes it from automatic following. Add app includes it again. If the app is closed or has no audio session, release completes when it next plays audio.
+
 

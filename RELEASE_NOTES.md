@@ -1,3 +1,15 @@
+# SoundSpan 0.6.15
+
+Windows master mute could leave audio playing through copied outputs, and periodic audio discovery could stall the app window. This update copies both source-device master mute and source-session mute to the selected outputs, and moves periodic discovery, health and default-device reads into bounded background work.
+
+- Keyboard/Windows master mute and unmute now propagate to the copied output sessions, while an independent app mute remains respected.
+- Fast setup ignores obsolete selected device IDs after a Windows or driver upgrade. Select the current speakers again; missing entries are disabled only after setup validates. Saved device records remain available, and identical monitor names are not guessed into screen positions.
+- Background discovery checks processes with audio sessions and allows one scan at a time. Results from old source/ownership states are discarded.
+
+Validation: 45 offline regressions passed against the exact published ZIP, plus two real updater extraction/checksum tests. The Windows 11 candidate passed 21 native checks covering volume/mute, live output lifecycle and fixture app routing. The user confirmed keyboard mute and responsiveness, then reported normal playback working well. The runtime-only archive has a complete SHA-256 manifest and excludes authored source, scripts, symbols, settings and logs.
+
+Limits: short live observations and user feedback do not establish prolonged game-load stability, acoustic synchronization, equal physical speaker loudness, or compatibility with every Bluetooth/Wi-Fi device. Some players need playback restarted after output changes. No zero-latency or bug-free guarantee. The Windows executable remains unsigned.
+
 # SoundSpan 0.6.13
 
 Improves recovery of app routing when an assigned speaker or shared source disconnects. SoundSpan releases only the app output preferences it still owns. Restoring a previous output now falls back to Windows default when that device is unavailable, rather than restoring a stale device ID. Saved screen assignments remain available for reconnection, and external routing changes are preserved.
@@ -107,4 +119,5 @@ Extract the entire ZIP and run SoundSpan.exe. Existing settings are retained. Cl
 Windows has separate capture-source, playback-device and per-app mixer volumes. Low source volume reduces every copied output; a warning below 50% is shown once per app launch. Players pinned to a specific output may need their output changed to Default and playback restarted.
 
 Known limits: the tested Acer pair uses a 95 ms software buffer plus device processing and saved delays. Windows stream/loopback measurements do not prove physical audibility, acoustic synchronization or performance on every device. The executable is unsigned. Bluetooth/Wi-Fi Windows endpoints may add transport delay; direct DLNA/AirPlay/Chromecast/Sonos casting is not implemented. See COMPATIBILITY.md.
+
 
